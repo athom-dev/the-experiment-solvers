@@ -1,0 +1,91 @@
+import { Box } from "@chakra-ui/react"
+import { Link } from "react-router";
+import { TreeView, createTreeCollection } from "@chakra-ui/react"
+import { LuFile, LuFolder, LuExternalLink } from "react-icons/lu"
+
+function Navigation() {
+    return (
+      <Box w={200}>
+          <TreeView.Root
+            collection={collection}
+            maxW="sm"
+            size="sm"
+          >
+            <TreeView.Label>Solvers and Helpers</TreeView.Label>
+            <TreeView.Tree>
+              <TreeView.Node
+                indentGuide={<TreeView.BranchIndentGuide />}
+                render={({ node, nodeState }) =>
+                  nodeState.isBranch ? (
+                    <TreeView.BranchControl>
+                      <LuFolder />
+                      <TreeView.BranchText>{node.name}</TreeView.BranchText>
+                    </TreeView.BranchControl>
+                  ) : (
+                    <TreeView.Item asChild>
+                        {node.disabled ? (
+                          <Box>
+                            <LuFile />
+                            <TreeView.ItemText textWrap="nowrap" title={node.name + ": Currently unavailable"} whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">{node.name}</TreeView.ItemText>
+                            {node.href?.startsWith("http") && (
+                              <LuExternalLink size={12} />
+                            )}
+                          </Box>
+                        ) : (
+                          <Link to={node.href}>
+                            <LuFile />
+                            <TreeView.ItemText textWrap="nowrap" title={node.name} whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">{node.name}</TreeView.ItemText>
+                            {node.href?.startsWith("http") && (
+                              <LuExternalLink size={12} />
+                            )}
+                          </Link>
+                        )}
+                    </TreeView.Item>
+                  )
+                }
+              />
+            </TreeView.Tree>
+          </TreeView.Root>
+      </Box>
+    );
+}
+
+interface Node {
+  id: string
+  href?: string
+  disabled?: boolean
+  name: string
+  children?: Node[]
+}
+
+const collection = createTreeCollection<Node>({
+  nodeToValue: (node) => node.id,
+  nodeToString: (node) => node.name,
+  rootNode: {
+    id: "ROOT",
+    name: "",
+    children: [
+      {
+        id: "solvers",
+        name: "Solvers",
+        children: [     
+          { disabled: true, href: "grid-puzzle.solv", id: "grid-puzzle.solv", name: "grid-puzzle.solv" },
+          { disabled: true, href: "math-puzzle.solv", id: "math-puzzle.solv", name: "math-puzzle.solv" },
+          { disabled: true, href: "chess-puzzle.solv", id: "chess-puzzle.solv", name: "chess-puzzle.solv" },
+          { disabled: true, href: "energy-container-puzzle.solv", id: "energy-container-puzzle.solv", name: "energy-container-puzzle.solv" },
+          { disabled: true, href: "xor-gates-puzzle.solv", id: "xor-gates-puzzle.solv", name: "xor-gates-puzzle.solv" },
+          { disabled: true, href: "batteries-puzzle.solv", id: "batteries-puzzle.solv", name: "batteries-puzzle.solv" },
+        ],
+      },
+      {
+        id: "more",
+        name: "Helpers",
+        children: [
+          { href: 'lockdown.solv', id: "lockdown.solv", name: "lockdown.solv" },
+        ],
+      },
+    ],
+  },
+})
+
+export default Navigation;
