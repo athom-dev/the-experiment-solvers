@@ -2,17 +2,23 @@ import { Box } from "@chakra-ui/react"
 import { Link } from "react-router";
 import { TreeView, createTreeCollection } from "@chakra-ui/react"
 import { LuFile, LuFolder, LuExternalLink } from "react-icons/lu"
+import { useState } from "react"
 
-function Navigation() {
+function Navigation(props) {
+    const [expandedValue, setExpandedValue] = useState<string[]>(["solvers", "more"]);
     return (
       <Box w={200}>
           <TreeView.Root
+
             collection={collection}
             maxW="sm"
             size="sm"
+            expandedValue={expandedValue}
+            onExpandedChange={(e) => setExpandedValue(e.expandedValue)}
           >
-            <TreeView.Label>Solvers and Helpers</TreeView.Label>
-            <TreeView.Tree>
+            {(props.showTitle == true) ?
+            (<TreeView.Label>Solvers and Helpers</TreeView.Label>): ''}
+            <TreeView.Tree >
               <TreeView.Node
                 indentGuide={<TreeView.BranchIndentGuide />}
                 render={({ node, nodeState }) =>

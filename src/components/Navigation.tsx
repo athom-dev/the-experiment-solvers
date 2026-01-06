@@ -1,5 +1,5 @@
 import { Avatar, Box, Heading, HStack } from "@chakra-ui/react"
-
+import { Link } from "react-router";
 const Athom = () => {
   return (
     <Avatar.Root size="sm">
@@ -13,12 +13,14 @@ function Navigation() {
     return (
         <nav>
             <Box pb="5" >
+                  <Link to="/">
                 <HStack gap="5">
                     <HStack w="100%" gap="3" justifyContent="center">
                         <Athom/>
                         <Heading size="lg">@athom.guy</Heading>
                     </HStack>
                 </HStack >
+                </Link>
             </Box>
             {/* Navigation content */}
         </nav>
