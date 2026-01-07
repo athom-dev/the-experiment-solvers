@@ -8,6 +8,7 @@ import { Container, Separator, HStack, Box, ScrollArea } from "@chakra-ui/react"
 
 import App from "./App"
 import LockdownSolv from "./solversAndHelpers/LockdownSolv.tsx"
+import EnergyContainerBoardSolv from "./solversAndHelpers/EnergyContainerBoardSolv.tsx"
 import Error404 from "./Error404"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -26,12 +27,15 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <ScrollArea.Root size="xs">
                 <ScrollArea.Viewport>
                   <ScrollArea.Content>
-                    <Box flexGrow={1} h="100%" overflow="auto" pe={8}>
+                    <Box flexGrow={1} h="100%" overflow="auto" ps={1} pe={8}>
                       <Routes>
-                        <Route path="/" element={<App />} />
-                        <Route path="/the-experiment-solvers" element={<App />} />
+                        <Route path="the-experiment-solvers">
+                          <Route index element={<App />} />
+                          {/* <Route element={<App />} /> */}
+                          <Route path="lockdown.solv" element={<LockdownSolv />} />
+                          <Route path="energy-container-puzzle.solv" element={<EnergyContainerBoardSolv />} />
+                        </Route>
                         <Route path="*" element={<Error404 />} />
-                        <Route path="/lockdown.solv" element={<LockdownSolv />} />
                       </Routes>
                     </Box>
                   </ScrollArea.Content>

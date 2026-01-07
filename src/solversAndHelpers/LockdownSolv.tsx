@@ -66,7 +66,6 @@ function convertKeyToColorSequence(key: string): [string[], number[]] | null {
 }
 
 const Demo = () => {
-  document.title = "lockdown.solv - The Experiment Solvers";
   const [selectedNumber, setSelectedNumber] = useState("1")
   const [selectedLetter, setSelectedLetter] = useState("KL")
   const [colorSequence, setColorSequence] = useState<[string[], number[]] | null>(null)
@@ -92,7 +91,7 @@ const Demo = () => {
     <form action="">
         <Stack gap="8" w="100%">
             <Box>
-                <Heading  mb={1}>lockdown.solv</Heading>
+                <Heading mb={1}>lockdown.solv</Heading>
                 <Text color="fg.muted">Use this helper to select the correct lockdown colors while in the trials.</Text>    
             </Box>
             <RadioCard.Root 

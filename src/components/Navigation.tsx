@@ -4,7 +4,7 @@ const Athom = () => {
   return (
     <Avatar.Root size="sm">
       <Avatar.Fallback name="Athom" />
-      <Avatar.Image src="assets/athom.png" />
+      <Avatar.Image src="/the-experiment-solvers/assets/athom.png" />
     </Avatar.Root>
   )
 }
@@ -13,14 +13,14 @@ function Navigation() {
     return (
         <nav>
             <Box pb="5" >
-                  <Link to="/">
+              <Link to="/the-experiment-solvers">
                 <HStack gap="5">
                     <HStack w="100%" gap="3" justifyContent="center">
                         <Athom/>
                         <Heading size="lg">@athom.guy</Heading>
                     </HStack>
                 </HStack >
-                </Link>
+              </Link>
             </Box>
             {/* Navigation content */}
         </nav>

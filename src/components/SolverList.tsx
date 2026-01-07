@@ -4,7 +4,7 @@ import { TreeView, createTreeCollection } from "@chakra-ui/react"
 import { LuFile, LuFolder, LuExternalLink } from "react-icons/lu"
 import { useState } from "react"
 
-function Navigation(props) {
+function Navigation(props: {showTitle?: boolean}) {
     const [expandedValue, setExpandedValue] = useState<string[]>(["solvers", "more"]);
     return (
       <Box w={200}>
@@ -30,17 +30,17 @@ function Navigation(props) {
                   ) : (
                     <TreeView.Item asChild>
                         {node.disabled ? (
-                          <Box>
+                          <Box title={node.name + ": Currently unavailable"}>
                             <LuFile />
-                            <TreeView.ItemText textWrap="nowrap" title={node.name + ": Currently unavailable"} whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">{node.name}</TreeView.ItemText>
+                            <TreeView.ItemText textWrap="nowrap" whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">{node.name}</TreeView.ItemText>
                             {node.href?.startsWith("http") && (
                               <LuExternalLink size={12} />
                             )}
                           </Box>
                         ) : (
-                          <Link to={node.href}>
+                          <Link to={"/the-experiment-solvers/" + node.href} title={node.name}>
                             <LuFile />
-                            <TreeView.ItemText textWrap="nowrap" title={node.name} whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">{node.name}</TreeView.ItemText>
+                            <TreeView.ItemText textWrap="nowrap" whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">{node.name}</TreeView.ItemText>
                             {node.href?.startsWith("http") && (
                               <LuExternalLink size={12} />
                             )}
@@ -78,9 +78,10 @@ const collection = createTreeCollection<Node>({
           { disabled: true, href: "grid-puzzle.solv", id: "grid-puzzle.solv", name: "grid-puzzle.solv" },
           { disabled: true, href: "math-puzzle.solv", id: "math-puzzle.solv", name: "math-puzzle.solv" },
           { disabled: true, href: "chess-puzzle.solv", id: "chess-puzzle.solv", name: "chess-puzzle.solv" },
-          { disabled: true, href: "energy-container-puzzle.solv", id: "energy-container-puzzle.solv", name: "energy-container-puzzle.solv" },
+          { href: "energy-container-puzzle.solv", id: "energy-container-puzzle.solv", name: "energy-container-puzzle.solv" },
           { disabled: true, href: "xor-gates-puzzle.solv", id: "xor-gates-puzzle.solv", name: "xor-gates-puzzle.solv" },
           { disabled: true, href: "batteries-puzzle.solv", id: "batteries-puzzle.solv", name: "batteries-puzzle.solv" },
+          { disabled: true, href: "the-unknown-puzzle.solv", id: "the-unknown-puzzle.solv", name: "the-unknown-puzzle.solv" },
         ],
       },
       {
