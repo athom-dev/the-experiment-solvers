@@ -81,7 +81,7 @@ const collection = createTreeCollection<Node>({
           { href: "energy-container-puzzle.solv", id: "energy-container-puzzle.solv", name: "energy-container-puzzle.solv" },
           { disabled: true, href: "xor-gates-puzzle.solv", id: "xor-gates-puzzle.solv", name: "xor-gates-puzzle.solv" },
           { disabled: true, href: "batteries-puzzle.solv", id: "batteries-puzzle.solv", name: "batteries-puzzle.solv" },
-          { disabled: true, href: "the-unknown-puzzle.solv", id: "the-unknown-puzzle.solv", name: "the-unknown-puzzle.solv" },
+          { disabled: true, href: "unknown-signal-puzzle.solv", id: "unknown-signal-puzzle.solv", name: "unknown-signal-puzzle.solv" },
         ],
       },
       {

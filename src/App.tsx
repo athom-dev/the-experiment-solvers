@@ -32,6 +32,19 @@ function App() {
               </Link>
             </Card.Footer>
           </Card.Root>
+          <Card.Root maxW="sm" gap={0} overflow="hidden">
+            <Image
+              src="/the-experiment-solvers/assets/lockdown.png"
+            />
+            <Card.Header pt={4} px={4}>
+              <Card.Title>lockdown.solv<br></br> <Badge variant="surface">Helpers</Badge></Card.Title>
+            </Card.Header>
+            <Card.Footer pt={0} p={4} justifyContent="flex-end">
+              <Link to="/the-experiment-solvers/lockdown.solv">
+                  <Button size="xs" variant="solid">View solver</Button>
+              </Link>
+            </Card.Footer>
+          </Card.Root>
           <Box></Box>
           <Box></Box>
         </Grid>
