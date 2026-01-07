@@ -80,8 +80,8 @@ const Demo = () => {
   const [inputTwo, setInputTwo] = useState("(3 * 5 - 5) / 5")
   const [inputThree, setInputThree] = useState("c")
   const [inputFour, setInputFour] = useState("m")
-  const [inputFive, setInputFive] = useState("z2")
-  const [inputSix, setInputSix] = useState("z2")
+  const [inputFive, setInputFive] = useState("v5")
+  const [inputSix, setInputSix] = useState("v5")
   const [inputSeven, setInputSeven] = useState("7")
 
   const [colorSequence, setColorSequence] = useState(decodeBoard(inputOne, "(3 * 5 - 5) / 5", "C", "M", "z2", "z2", "7"));
@@ -135,8 +135,8 @@ const Demo = () => {
                   <Box>
                     <Editable.Root onValueChange={(e) => handleFormChange("inputOne", e.value)} defaultValue={inputOne}>
                       <Editable.Label fontSize="lg" fontFamily="monospace" fontWeight="bold">1)</Editable.Label>
-                      <Editable.Preview fontFamily="monospace" fontSize="lg" />
-                      <Editable.Input fontFamily="monospace" fontSize="lg" />
+                      <Editable.Preview fontFamily="monospace" fontSize="md" />
+                      <Editable.Input fontFamily="monospace" fontSize="md" />
                       <Editable.Control>
                         <Editable.EditTrigger asChild>
                           <IconButton variant="ghost" size="md">
@@ -154,8 +154,8 @@ const Demo = () => {
                   <Box>
                     <Editable.Root onValueChange={(e) => handleFormChange("inputTwo", e.value)} defaultValue={inputTwo}>
                       <Editable.Label fontSize="lg" fontWeight="bold" fontFamily="monospace">2)</Editable.Label>
-                      <Editable.Preview fontFamily="monospace" fontSize="lg" />
-                      <Editable.Input fontFamily="monospace" fontSize="lg" />
+                      <Editable.Preview fontFamily="monospace" fontSize="md" />
+                      <Editable.Input fontFamily="monospace" fontSize="md" />
                       <Editable.Control>
                         <Editable.EditTrigger asChild>
                           <IconButton variant="ghost" size="md">

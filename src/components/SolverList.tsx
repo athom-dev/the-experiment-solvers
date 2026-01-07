@@ -89,6 +89,7 @@ const collection = createTreeCollection<Node>({
         name: "Helpers",
         children: [
           { href: 'lockdown.solv', id: "lockdown.solv", name: "lockdown.solv" },
+          { disabled: true, href: 'letter-to-number.solv', id: "letter-to-number.solv", name: "letter-to-number.solv" },
         ],
       },
     ],
