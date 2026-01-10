@@ -1,13 +1,16 @@
 body, html {
+    height: 100%;
     overflow: hidden;
+}
+#root {
+    height: 100%;
 }
 .solver-helper-list {
     grid-template-columns: repeat(3, 1fr);
 }
-
-    .hide-desktop {
-        display: none;
-    }
+.hide-desktop {
+    display: none;
+}
 @media screen and (width <= 992px) {
     .solver-helper-list {
         grid-template-columns: repeat(2, 1fr);  
