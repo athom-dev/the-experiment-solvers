@@ -1,0 +1,33 @@
+
+.solver-helper-list {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+    .hide-desktop {
+        display: none;
+    }
+@media screen and (width <= 992px) {
+    .solver-helper-list {
+        grid-template-columns: repeat(2, 1fr);  
+    }
+}
+.scrollArea {
+    min-width: unset!important;
+}
+@media screen and (width <= 772px) {
+    .pe-md-0 {
+        padding-right: 0!important;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    .hide-desktop {
+        display: block;
+    }
+}
+
+@media screen and (width <= 512px) {
+    .solver-helper-list {
+        grid-template-columns: repeat(1, 1fr);  
+    }
+}
