@@ -31,7 +31,7 @@ const SolverHelperItem = (props: {title: string, link: string, image: string, ta
           src={"/the-experiment-solvers/assets/"+props.image}
         />
         <Card.Header pt={4} px={4}>
-          <Card.Title textOverflow="ellipsis" whiteSpace="nowrap" width="100%" overflow="hidden"title="{props.title}">{props.title}<br></br> <Badge variant="surface">{props.tag}</Badge></Card.Title>
+          <Card.Title textOverflow="ellipsis" whiteSpace="nowrap" width="100%" overflow="hidden"title={props.title}>{props.title}<br></br> <Badge variant="surface">{props.tag}</Badge></Card.Title>
         </Card.Header>
         <Card.Footer pt={0} p={4} justifyContent="flex-end">
           <Link to={"/the-experiment-solvers/"+props.link}>
