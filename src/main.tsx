@@ -9,6 +9,8 @@ import { Container, Separator, HStack, Box, ScrollArea } from "@chakra-ui/react"
 import App from "./App"
 import LockdownSolv from "./solversAndHelpers/LockdownSolv.tsx"
 import EnergyContainerBoardSolv from "./solversAndHelpers/EnergyContainerBoardSolv.tsx"
+import LetterToNumberSolv from "./solversAndHelpers/LetterToNumberSolv.tsx"
+import UnknownSignalPuzzleSolv from "./solversAndHelpers/UnknownSignalPuzzleSolv.tsx"
 import Error404 from "./Error404"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -34,6 +36,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                           {/* <Route element={<App />} /> */}
                           <Route path="lockdown.solv" element={<LockdownSolv />} />
                           <Route path="energy-container-puzzle.solv" element={<EnergyContainerBoardSolv />} />
+                          <Route path="unknown-signal-puzzle.solv" element={<UnknownSignalPuzzleSolv />} />
+                          <Route path="letter-to-number.solv" element={<LetterToNumberSolv />} />
                         </Route>
                         <Route path="*" element={<Error404 />} />
                       </Routes>

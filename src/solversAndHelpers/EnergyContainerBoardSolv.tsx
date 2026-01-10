@@ -127,7 +127,7 @@ const Demo = () => {
         <Stack gap="8" w="100%">
             <Box>
                 <Heading mb={1}>energy-container-puzzle.solv</Heading>
-                <Text color="fg.muted">Use this helper to select the correct energy container colors while for the Timeless ending.</Text>    
+                <Text color="fg.muted">Use this solver to select the correct energy container colors while for the Timeless ending.</Text>    
             </Box>
             <Box border="3px solid" borderColor="border" borderRadius="md" px='8' py="8" aspectRatio="2/1">
               <Grid templateColumns="repeat(10, 5fr)" gap="8" h="100%">
@@ -175,7 +175,7 @@ const Demo = () => {
                   <HStack>
                     <Text fontWeight="bold" fontSize="lg" fontFamily="monospace">3)</Text>
                     <Select.Root
-                      onValueChange={(e) => handleFormChange("inputThree", e.value)}
+                      onValueChange={(e) => handleFormChange("inputThree", e.value[0])}
                       defaultValue={[inputThree]}
                       collection={colors}
                       size="md"
@@ -211,7 +211,7 @@ const Demo = () => {
                   <HStack>
                     <Text fontWeight="bold" fontSize="lg" fontFamily="monospace">4)</Text>
                     <Select.Root
-                      onValueChange={(e) => handleFormChange("inputFour", e.value)}
+                      onValueChange={(e) => handleFormChange("inputFour", e.value[0])}
                       defaultValue={[inputFour]}
                       collection={colors}
                       size="md"
@@ -249,7 +249,7 @@ const Demo = () => {
                     <Text fontWeight="bold" fontSize="lg" fontFamily="monospace">5)</Text>
                     <Select.Root
                       defaultValue={[inputFive]}
-                      onValueChange={(e) => handleFormChange("inputFive", e.value)}
+                      onValueChange={(e) => handleFormChange("inputFive", e.value[0])}
                       collection={letters}
                       size="md"
                       positioning={{ sameWidth: true }}
@@ -279,7 +279,7 @@ const Demo = () => {
                   <HStack>
                     <Text fontWeight="bold" fontSize="lg" fontFamily="monospace">6)</Text>
                     <Select.Root
-                      onValueChange={(e) => handleFormChange("inputSix", e.value)}
+                      onValueChange={(e) => handleFormChange("inputSix", e.value[0])}
                       defaultValue={[inputSix]}
                       collection={letters}
                       size="md"
@@ -311,7 +311,7 @@ const Demo = () => {
                   <HStack>
                     <Text fontWeight="bold" fontSize="lg" fontFamily="monospace">7)</Text>
                     <Select.Root
-                      onValueChange={(e) => handleFormChange("inputSeven", e.value)}
+                      onValueChange={(e) => handleFormChange("inputSeven", e.value[0])}
                       defaultValue={[inputSeven]}
                       collection={number}
                       size="md"

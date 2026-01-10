@@ -81,7 +81,7 @@ const collection = createTreeCollection<Node>({
           { href: "energy-container-puzzle.solv", id: "energy-container-puzzle.solv", name: "energy-container-puzzle.solv" },
           { disabled: true, href: "xor-gates-puzzle.solv", id: "xor-gates-puzzle.solv", name: "xor-gates-puzzle.solv" },
           { disabled: true, href: "batteries-puzzle.solv", id: "batteries-puzzle.solv", name: "batteries-puzzle.solv" },
-          { disabled: true, href: "unknown-signal-puzzle.solv", id: "unknown-signal-puzzle.solv", name: "unknown-signal-puzzle.solv" },
+          { href: "unknown-signal-puzzle.solv", id: "unknown-signal-puzzle.solv", name: "unknown-signal-puzzle.solv" },
         ],
       },
       {
@@ -89,7 +89,7 @@ const collection = createTreeCollection<Node>({
         name: "Helpers",
         children: [
           { href: 'lockdown.solv', id: "lockdown.solv", name: "lockdown.solv" },
-          { disabled: true, href: 'letter-to-number.solv', id: "letter-to-number.solv", name: "letter-to-number.solv" },
+          { href: 'letter-to-number.solv', id: "letter-to-number.solv", name: "letter-to-number.solv" },
         ],
       },
     ],
