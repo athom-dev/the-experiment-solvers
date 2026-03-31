@@ -1,0 +1,83 @@
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+* {
+    transition: .2s all!important;
+}
+#root {
+    height: 100%;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* scale: 0.98; */
+        /* transform: translateY(-.5rem); */
+    }
+    to {
+        opacity: 1;
+    }
+}
+.app-page {
+    min-height: 100%!important;
+    animation: .3s fadeIn ease;
+}
+.solver-helper-list {
+    grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (width <= 992px) {
+    .solver-helper-list {
+        grid-template-columns: repeat(2, 1fr);  
+    }
+}
+@media screen and (width >= 767px) {
+    .hide-desktop {
+        display: none;
+    }
+}
+.scrollArea {
+    min-width: unset!important;
+}
+@media screen and (width <= 767px) {
+    .pe-md-0 {
+        padding-right: 0!important;
+    }
+    .hide-mobile {
+        display: none;
+    }
+}
+
+@media screen and (width <= 512px) {
+    .solver-helper-list {
+        grid-template-columns: repeat(1, 1fr);  
+    }
+}
+
+@media screen and (width <= 1024px) {
+    .energy-container-puzzle-col {
+        grid-column: 1 / 13!important;
+    }
+}
+@media screen and (width <= 512px) {
+    .energy-container-grid {
+        display: flex!important;
+        flex-direction: column!important;
+    }
+    .energy-container-puzzle-col {
+        grid-column: 1 / 12!important;
+    }
+}
+html.light .only-light-mode {
+    display: block;
+}
+html.dark .only-light-mode {
+    display: none;
+}
+
+
+html.dark .only-dark-mode {
+    display: block;
+}
+html.light .only-dark-mode {
+    display: none;
+}
