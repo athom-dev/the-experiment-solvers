@@ -19,7 +19,7 @@ function BatteriesPuzzleSolv() {
     return (
         <Stack className="app-page" h="100%" gap="8">
             <Box>
-                <Heading mb={1}>batteries-puzzle.solv</Heading>
+                <Heading mb={1}>Timeless: Batteries</Heading>
                 <Text color="fg.muted">Use this solver to get the correct value of BATTERY 3 at Laboratory #9.</Text>
             </Box>
             <HStack flexDirection={{base: 'column', sm: 'row'}} gap={{base: 8, sm: 0}} fontFamily="monospace">

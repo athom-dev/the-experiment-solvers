@@ -6,7 +6,7 @@ function LockdownSolv() {
     return (
         <Box className="app-page" w="100%">
             <Box mb={8} position='relative'>
-                <Heading mb={1}>lockdown.solv</Heading>
+                <Heading mb={1}>Lockdown</Heading>
                 <Text color="fg.muted">Use this helper to select the correct lockdown colors while in the trials.</Text>
                 
                 <Dialog.Root size="md" placement="center" motionPreset="slide-in-bottom">

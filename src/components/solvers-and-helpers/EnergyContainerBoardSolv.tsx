@@ -126,7 +126,7 @@ const Demo = () => {
     <form action="">
         <Stack className="app-page" gap="8" w="100%">
             <Box>
-                <Heading mb={1}>energy-container-puzzle.solv</Heading>
+                <Heading mb={1}>Timeless: Energy Container</Heading>
                 <Text color="fg.muted">Use this solver to select the correct energy container colors while for the Timeless ending.</Text>    
             </Box>
             <Box border="3px solid" borderColor="border" borderRadius="md" pe="10" px='8' py="8" minH={"300px"}>

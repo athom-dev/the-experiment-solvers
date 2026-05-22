@@ -54,7 +54,7 @@ function LetterToNumberSolv() {
     return (
         <Stack className="app-page" gap="8">
             <Box>
-                <Heading mb={1}>letter-to-number.solv</Heading>
+                <Heading mb={1}>Decoder</Heading>
                 <Text color="fg.muted">Use this helper to decode encrypted keys without needing to access the Control Room.</Text>    
             </Box>
             <Editable.Root onValueChange={(e) => handleInputChange(e.value)} defaultValue={inputValue}>

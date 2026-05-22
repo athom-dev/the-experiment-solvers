@@ -18,6 +18,7 @@ const Changelog = () => (
     <List.Root ps={6}>
       <List.Item fontSize="sm">You can now share the link of an <b>solver or helper</b>.</List.Item>
       <List.Item fontSize="sm">You can now <b>reload the page of a solver</b> without failures.</List.Item>
+      <List.Item fontSize="sm">Solvers and helpers now have a more friendly name.</List.Item>
     </List.Root>
   </>
 )

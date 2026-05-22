@@ -73,7 +73,7 @@ function UnknownSignalPuzzleSolv () {
     return (
         <Stack className="app-page" gap='8'>
             <Box>
-                <Heading mb={1}>xor-gates-puzzle.solv</Heading>
+                <Heading mb={1}>Timeless: XOR Gates</Heading>
                 <Text color="fg.muted">Use this solver to get the correct pattern to solve the puzzle at Laboratory #9 and unlock the safe at New Office Complex 1.</Text>
             </Box>
 

@@ -40,7 +40,7 @@ function UnknownSignalPuzzleSolv () {
     return (
         <Stack className="app-page" gap='8'>
             <Box>
-                <Heading mb={1}>unknown-signal-puzzle.solv</Heading>
+                <Heading mb={1}>Unknow signal</Heading>
                 <Text color="fg.muted">Use this solver to get the correct input for the Unknown Signal badge.</Text>
             </Box>
             
