@@ -1,0 +1,5 @@
+:root {
+  --header-size: 3rem;
+  --aside-size: 25rem;
+  --aside-bg: var(--chakra-colors-gray-100)
+}

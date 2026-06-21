@@ -6,4 +6,15 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   base: '/the-experiment-solvers',
   plugins: [react(), tsconfigPaths()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        notfound: '404.html'
+      },
+      output: {
+        entryFileNames: '[name].html'
+      }
+    }
+  }
 })
