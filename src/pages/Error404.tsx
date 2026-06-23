@@ -16,7 +16,7 @@ function Error404() {
           <GoAlert />
         </EmptyState.Indicator>
         <VStack textAlign="center">
-          <EmptyState.Title>Error: Page not found</EmptyState.Title>
+          <EmptyState.Title>Error: Page not found.</EmptyState.Title>
           <EmptyState.Description>
             The requested page could not be found. Please check the URL and try again.
           </EmptyState.Description>
