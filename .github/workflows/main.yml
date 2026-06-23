@@ -1,16 +1,16 @@
 name: Deploy Pipeline
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+    - main
 
 permissions:
-contents: write
+  contents: write
 
 jobs:
-deploy:
-runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
 steps:
   - name: Checkout
@@ -21,7 +21,7 @@ steps:
   - name: Setup Node
     uses: actions/setup-node@v4
     with:
-      node-version: 22
+      node-version: 25.8.1
       cache: npm
 
   - name: Install
