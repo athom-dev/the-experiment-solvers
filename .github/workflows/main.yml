@@ -15,11 +15,16 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: '25.8.1' # Modifique para a versão do Node que seu projeto utiliza
+          node-version: '25.8.1'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Configure Git User
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
 
       - name: Execute Pre-Deploy
         run: npm run predeploy
