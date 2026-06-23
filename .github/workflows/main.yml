@@ -43,4 +43,4 @@ jobs:
       - name: Execute Deploy
         run: |
           # CORREÇÃO DEFINITIVA: Executa o gh-pages injetando explicitamente a URL autenticada com o Token
-          npx gh-pages -d build -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@://github.com{{ github.repository }}.git
+          npm run deploy
