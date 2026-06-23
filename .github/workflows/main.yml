@@ -4,6 +4,16 @@ on:
   push:
     branches: [ "main" ]
 
+# Força o robô a ignorar avisos internos do Node nos servidores do GitHub
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+# ESTA É A CORREÇÃO: Autoriza o fluxo a gravar dados na branch gh-pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,16 +25,16 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: '25.8.1'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Configure Git User
-        run: git config --global user.name "athom-dev"
-      - name: Configure Git User
-        run: git config --global user.email "danielzavarizlara@gmail.com"
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Execute Pre-Deploy
         run: npm run predeploy
