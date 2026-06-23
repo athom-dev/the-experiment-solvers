@@ -9,7 +9,7 @@ export default function AppLayout () {
         <Sidebar />
         <Stack as="main">
           <Header />
-          <Container w="3xl">
+          <Container className="container" h="100%" w="3xl">
             <Outlet />
           </Container>
         </Stack>

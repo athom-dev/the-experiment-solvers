@@ -12,7 +12,12 @@ export default function Sidebar() {
         <Stack gap={1}>
           <NavButton icon={<House/>} label="Welcome" to="/the-experiment-solvers/" />
 
-          <NavCategory title="Solvers">
+          <NavCategory hidden title="Overview">
+            <NavButton label="Introduction" to="/the-experiment-solvers/overview/introduction" />
+            <NavButton label="User Interface & Controls" to="/the-experiment-solvers/overview/user-interface" />
+            <NavButton label="Devices & Compability" to="/the-experiment-solvers/overview/compability" />
+          </NavCategory>
+          <NavCategory title="Puzzle Solutions">
             <NavButton icon={<Puzzle/>} label="Timeless: Grid" to="/the-experiment-solvers/solvers/timeless-grid-solver" />
             <NavButton icon={<Puzzle/>} label="Timeless: Math" to="/the-experiment-solvers/solvers/timeless-math-solver" />
             <NavButton icon={<Puzzle/>} label="Timeless: Chess" to="/the-experiment-solvers/solvers/timeless-chess-solver" />

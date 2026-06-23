@@ -1,4 +1,4 @@
-import { IconButton, Icon } from "@chakra-ui/react"
+import { IconButton, Icon, Box } from "@chakra-ui/react"
 import { House } from "lucide-react"
 import { NavLink } from "react-router"
 interface NavButtonProps {
@@ -11,7 +11,7 @@ export default function NavButton ({icon, label, to}:NavButtonProps) {
   return (
     <IconButton colorPalette="gray" rounded="md" className="nav-button" asChild justifyContent="start" px={2.5} size={"md"} variant="subtle">
       <NavLink end to={to}>
-        {(icon) && <Icon>{icon}</Icon>}
+        {(icon) && <Icon>{icon}</Icon> || <Box h="20px" w="20px"><></></Box>}
         {label}
       </NavLink>
     </IconButton>

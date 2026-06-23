@@ -9,12 +9,7 @@ export default function NavHeader () {
 
   return (
     <HStack  pe={2} gap={0} as="header">
-      <IconButton onClick={toggleAside} size="md" variant="subtle">
-        <Icon>
-          <Menu />
-        </Icon>
-      </IconButton>
-      <Heading className="concealable" size="xs">The Experiment Solvers</Heading>
+      <Heading mx="auto" className="concealable" size="sm">The Experiment Solvers</Heading>
     </HStack>
   )
 }

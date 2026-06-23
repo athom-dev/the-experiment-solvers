@@ -3,11 +3,12 @@ import { ChevronRight } from "lucide-react"
 
 interface NavCategoryProps {
   title: string,
+  hidden?: boolean,
   children: React.ReactNode
 }
-export default function NavCategory({title, children}:NavCategoryProps) {
+export default function NavCategory({title, hidden, children}:NavCategoryProps) {
   return (
-    <Collapsible.Root  defaultOpen>
+    (!hidden) && <Collapsible.Root  defaultOpen>
       <Collapsible.Trigger
         w="100%"
         asChild
