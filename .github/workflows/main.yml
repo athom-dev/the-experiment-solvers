@@ -4,11 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
-# Força o robô a ignorar avisos internos do Node nos servidores do GitHub
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
-# ESTA É A CORREÇÃO: Autoriza o fluxo a gravar dados na branch gh-pages
 permissions:
   contents: write
   pages: write
@@ -35,9 +33,14 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # CORREÇÃO: Configura o Git para injetar o token automaticamente nas requisições HTTPS
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@://github.com".insteadOf "https://://github.com"
 
       - name: Execute Pre-Deploy
         run: npm run predeploy
 
       - name: Execute Deploy
+        # CORREÇÃO ALTERNATIVA: Injeta também como variável de ambiente para o pacote gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
