@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Modifique para a versão do Node que seu projeto utiliza
+          node-version: '25.8.1' # Modifique para a versão do Node que seu projeto utiliza
           cache: 'npm'
 
       - name: Install dependencies
