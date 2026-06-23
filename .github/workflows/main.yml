@@ -23,8 +23,8 @@ jobs:
 
       - name: Configure Git User
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git config --global user.name "athom-dev"
+          git config --global user.email "danielzavarizlara@gmail.com"
 
       - name: Execute Pre-Deploy
         run: npm run predeploy
