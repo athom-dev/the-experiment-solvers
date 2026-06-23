@@ -46,12 +46,12 @@ const SolversAndHelpers = () => (
     <Stack>
       <Heading size="xl">Available Solvers and Helpers</Heading>
       <Grid className="solver-helper-list" gapY="6" gapX="6">
-        <SolverHelperItem title="Lockdown" link="lockdown.solv" image="lockdown.png" tag="Helpers" />
-        <SolverHelperItem title="Timeless: Energy Container" link="energy-container-puzzle.solv" image="lab9.png" tag="Solvers" />
-        <SolverHelperItem title="Decoder" link="letter-to-number.solv" image="control-room.png" tag="Helpers" />
-        <SolverHelperItem title="Unknow Signal" link="unknown-signal-puzzle.solv" image="battery-e-room.png" tag="Solvers" />
-        <SolverHelperItem title="Timeless: XOR Gates" link="xor-gates-puzzle.solv" image="lab9.png" tag="Solvers" />
-        <SolverHelperItem title="Timeless: Batteries" link="batteries-puzzle.solv" image="lab9.png" tag="Solvers" />
+        <SolverHelperItem title="lockdown.solv" link="lockdown.solv" image="lockdown.png" tag="Helpers" />
+        <SolverHelperItem title="energy-container-puzzle.solv" link="energy-container-puzzle.solv" image="lab9.png" tag="Solvers" />
+        <SolverHelperItem title="letter-to-number.solv" link="letter-to-number.solv" image="control-room.png" tag="Helpers" />
+        <SolverHelperItem title="unknown-signal-puzzle.solv" link="unknown-signal-puzzle.solv" image="battery-e-room.png" tag="Solvers" />
+        <SolverHelperItem title="xor-gates-puzzle.solv" link="xor-gates-puzzle.solv" image="lab9.png" tag="Solvers" />
+        <SolverHelperItem title="batteries-puzzle.solv" link="batteries-puzzle.solv" image="lab9.png" tag="Solvers" />
       </Grid>
     </Stack>
   </>
