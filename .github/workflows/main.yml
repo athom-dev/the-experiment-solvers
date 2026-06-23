@@ -2,10 +2,8 @@ name: Deploy Pipeline
 
 on:
 push:
-branches: [ "main" ]
-
-env:
-FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+branches:
+- main
 
 permissions:
 contents: write
@@ -14,19 +12,20 @@ jobs:
 deploy:
 runs-on: ubuntu-latest
 
+```
 steps:
-  - name: Checkout repository code
+  - name: Checkout
     uses: actions/checkout@v4
     with:
       fetch-depth: 0
 
-  - name: Setup Node.js
+  - name: Setup Node
     uses: actions/setup-node@v4
     with:
-      node-version: '22'
-      cache: 'npm'
+      node-version: 22
+      cache: npm
 
-  - name: Install dependencies
+  - name: Install
     run: npm ci
 
   - name: Configure Git
@@ -34,12 +33,13 @@ steps:
       git config --global user.name "github-actions[bot]"
       git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-  - name: Execute Pre-Deploy
+  - name: Predeploy
     run: npm run predeploy
 
-  - name: Execute Deploy
+  - name: Deploy
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     run: |
-      git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/athom-dev/${{ github.repository }}.git
+      git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
       npm run deploy
+```
