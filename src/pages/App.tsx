@@ -13,12 +13,10 @@ const GreetingsText = () => (
 const Changelog = () => (
   <>
 
-    <Heading size="xl">22th May 2026 — Changelog <Badge>v5.0</Badge></Heading>
+    <Heading size="xl">23th June 2026 — Changelog <Badge>v5.1</Badge></Heading>
     <Text fontSize="sm">These are the recent additions and changes to the directory:</Text>
     <List.Root ps={6}>
-      <List.Item fontSize="sm">You can now share the link of an <b>solver or helper</b>.</List.Item>
-      <List.Item fontSize="sm">You can now <b>reload the page of a solver</b> without failures.</List.Item>
-      <List.Item fontSize="sm">Solvers and helpers now have a more friendly name.</List.Item>
+      <List.Item fontSize="sm"><b>Lockdown</b> helper now does work properly on mobile devices.</List.Item>
     </List.Root>
   </>
 )
