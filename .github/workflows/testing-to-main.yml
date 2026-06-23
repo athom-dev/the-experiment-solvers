@@ -1,0 +1,23 @@
+name: Auto PR de Testing para Main
+
+on:
+  push:
+    branches:
+      - testing
+
+jobs:
+  create-pr-to-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Criar Pull Request para Main
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: testing # Branch de origem
+          base: main # Branch de destino
+          title: "Automático: Mesclar Testing em Main"
+          body: "Este PR foi gerado automaticamente após alterações na branch testing."
+          commit-message: "Mesclando alterações de testing"

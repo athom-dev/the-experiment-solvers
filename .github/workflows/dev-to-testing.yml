@@ -1,0 +1,23 @@
+name: Auto PR de Dev para Testing
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  create-pr-to-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Criar Pull Request para Testing
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: dev # Branch de origem
+          base: testing # Branch de destino
+          title: "Automático: Mesclar Dev em Testing"
+          body: "Este PR foi gerado automaticamente após um push na branch dev."
+          commit-message: "Mesclando alterações de dev"
