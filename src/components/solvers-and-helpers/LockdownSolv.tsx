@@ -269,7 +269,7 @@ const LockdownMobileLayout = () => {
             </Portal>
           </Select.Root>
 
-          <Select.Root onValueChange={(e) => handleFormChange('letter', e.value.toString())} collection={selectLetters} size="lg"  defaultValue={['KS']}>
+          <Select.Root onValueChange={(e) => handleFormChange('letter', e.value.toString())} collection={selectLetters} size="lg"  defaultValue={[selectedLetter]}>
             <Select.HiddenSelect />
             <Select.Label>Select the letters</Select.Label>
             <Select.Control>
