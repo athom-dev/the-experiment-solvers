@@ -1,6 +1,6 @@
 import { Prose } from "@/components/ui/prose";
 import { Heading } from "@chakra-ui/react";
-import {MarkdownViewer} from "@/utils/Markdown";
+import { MarkdownViewer } from "@/utils/Markdown";
 
 export default function HomePage() {
   const md = `
@@ -16,13 +16,13 @@ export default function HomePage() {
 
   ### Contributors
 
-  **@athom.guy — Website Designer & Puzzle Solutions Developer:** Contributed on developing all the interfaces and layout of the website. Made all the current solvers. It's also who wrote all of that. 
+  **@athom.guy — Website Designer & Developer:** Contributed on developing all the interfaces and layout of the website. Made all the current solvers. It's also who wrote all of that. 
   `
-  
+
   return (
     <>
       <Prose className="markdown" minW="unset" w="auto" maxW="unset">
-        <MarkdownViewer markdownContent={md}/>
+        <MarkdownViewer markdownContent={md} />
       </Prose>
     </>
   )
