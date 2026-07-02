@@ -9,6 +9,7 @@ import Navigation from "./components/main/Navigation.tsx"
 import SolverList from "./components/main/SolversTree.tsx"
 
 import "../public/style.css"
+import "../public/script.js"
 import App from "./pages/App"
 import Error404 from "./pages/Error404"
 
@@ -18,6 +19,7 @@ import LetterToNumberSolv from "./components/solvers-and-helpers/LetterToNumberS
 import BatteriesPuzzleSolv from "./components/solvers-and-helpers/BatteriesPuzzleSolv.tsx"
 import UnknownSignalPuzzleSolv from "./components/solvers-and-helpers/UnknownSignalPuzzleSolv.tsx"
 import XorGatesPuzzleSolv from "./components/solvers-and-helpers/XorGatesPuzzleSolv.tsx"
+import TimelessGridSolver from "./components/solvers-and-helpers/GridPuzzleSolv.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -43,6 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                           <Route index element={<App />} />
                           {/* <Route element={<App />} /> */}
                           <Route path="lockdown.solv" element={<LockdownSolv />} />
+                          <Route path="grid-puzzle.solv" element={<TimelessGridSolver />} />
                           <Route path="energy-container-puzzle.solv" element={<EnergyContainerBoardSolv />} />
                           <Route path="unknown-signal-puzzle.solv" element={<UnknownSignalPuzzleSolv />} />
                           <Route path="batteries-puzzle.solv" element={<BatteriesPuzzleSolv />} />

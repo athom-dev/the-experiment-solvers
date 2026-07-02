@@ -13,10 +13,10 @@ const GreetingsText = () => (
 const Changelog = () => (
   <>
 
-    <Heading size="xl">23th June 2026 — Changelog <Badge>v5.1</Badge></Heading>
+    <Heading size="xl">02th July 2026 — Changelog <Badge>v6.0</Badge></Heading>
     <Text fontSize="sm">These are the recent additions and changes to the directory:</Text>
     <List.Root ps={6}>
-      <List.Item fontSize="sm"><b>Lockdown</b> helper now does work properly on mobile devices.</List.Item>
+      <List.Item fontSize="sm">New solver available <b>Timeless: Grid</b></List.Item>
     </List.Root>
   </>
 )
@@ -52,6 +52,7 @@ const SolversAndHelpers = () => (
         <SolverHelperItem title="Unknow Signal" link="unknown-signal-puzzle.solv" image="battery-e-room.png" tag="Solvers" />
         <SolverHelperItem title="Timeless: XOR Gates" link="xor-gates-puzzle.solv" image="lab9.png" tag="Solvers" />
         <SolverHelperItem title="Timeless: Batteries" link="batteries-puzzle.solv" image="lab9.png" tag="Solvers" />
+        <SolverHelperItem title="Timeless: Grid" link="grid-puzzle.solv" image="lab9.png" tag="Solvers" />
       </Grid>
     </Stack>
   </>

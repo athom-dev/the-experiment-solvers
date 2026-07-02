@@ -75,7 +75,7 @@ const collection = createTreeCollection<Node>({
         id: "solvers",
         name: "Solvers",
         children: [     
-          { disabled: true, href: "grid-puzzle.solv", id: "grid-puzzle.solv", name: "Timeless: Grid" },
+          { href: "grid-puzzle.solv", id: "grid-puzzle.solv", name: "Timeless: Grid" },
           { disabled: true, href: "math-puzzle.solv", id: "math-puzzle.solv", name: "Timeless: Math" },
           { disabled: true, href: "chess-puzzle.solv", id: "chess-puzzle.solv", name: "Timeless: Chess" },
           { href: "energy-container-puzzle.solv", id: "energy-container-puzzle.solv", name: "Timeless: Energy Container" },
