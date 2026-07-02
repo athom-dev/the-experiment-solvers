@@ -1,5 +1,5 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-import React, { type AllHTMLAttributes } from "react";
+import React from "react";
 
 export const GridGenerator: any = []
 
@@ -25,22 +25,22 @@ export function obtainItem(row: number, col: number) {
 
 const itemList: any[] = []
 function Root({x, y, labelGrid, children, ...props}:{x:number, y: number, labelGrid: boolean | null, children: React.ReactNode}) {
+  const shouldInitializeGrid =
+    gridSettings.numOfRows !== x ||
+    gridSettings.numOfCols !== y ||
+    gridSettings.items.length === 0
+
   gridSettings.numOfItems = x * y
   gridSettings.numOfRows = x
   gridSettings.numOfCols = y
 
-  const letters = "abcdefghijklmnopqrstuvwxyz"
-  
-  for (let index = 0; index < gridSettings.numOfRows; index++) {
-    const cols = []
-    for (let index2 = 0; index2 < gridSettings.numOfCols; index2++) {
-      cols[index2] = 0;
-    }
-    gridSettings.items[index] = cols
+  if (shouldInitializeGrid) {
+    gridSettings.items = Array.from({ length: x }, () => Array.from({ length: y }, () => 0))
   }
+  const letters = "abcdefghijklmnopqrstuvwxyz"
   const colsLetters = []
-  for(let index = 0; index < gridSettings.numOfCols; index++) {
-    colsLetters[index] = letters[index] 
+  for (let index = 0; index < gridSettings.numOfCols; index++) {
+    colsLetters[index] = letters[index]
   }
   const rowsNum = []
   for(let index = 0; index < gridSettings.numOfCols; index++) {
@@ -53,7 +53,7 @@ function Root({x, y, labelGrid, children, ...props}:{x:number, y: number, labelG
       <Grid opacity=".5" w="100%" templateColumns={`repeat(${x}, 1fr)`} top="-1em" transform="translateY(-25%)" position="absolute" h="1em">
         {colsLetters.map((value) => <GridItem key={value} textAlign="center" color="fg.subtle">{value}</GridItem>)}
       </Grid>
-      <Grid opacity=".5" h="100%" w="1em" top="0" templateRows={`repeat(${x}, 1fr)`} left="-1em" position="absolute">
+      <Grid opacity=".5" h="100%" w="1em" top="0" templateRows={`repeat(${y}, 1fr)`} left="-1em" position="absolute">
         {rowsNum.map((value) => <GridItem key={value} textAlign="center" display="flex" alignItems="center" justifyContent="center" color="fg.subtle">{value + 1}</GridItem>)}
       </Grid>
       </>
