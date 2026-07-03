@@ -13,10 +13,11 @@ const GreetingsText = () => (
 const Changelog = () => (
   <>
 
-    <Heading size="xl">02th July 2026 — Changelog <Badge>v6.0</Badge></Heading>
+    <Heading size="xl">02th July 2026 — Changelog <Badge>v6.1</Badge></Heading>
     <Text fontSize="sm">These are the recent additions and changes to the directory:</Text>
     <List.Root ps={6}>
       <List.Item fontSize="sm">New solver available <b>Timeless: Grid</b></List.Item>
+      <List.Item fontSize="sm">Minor bug fixes and changes</List.Item>
     </List.Root>
   </>
 )
