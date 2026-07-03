@@ -96,12 +96,10 @@ const isCrossValid = (
   cross: Position,
   reds: GridCell[],
   yellows: GridCell[],
-  blues: GridCell[],
   mode: SolverMode,
 ) => {
   if (reds.some((red) => isAligned(cross, [red.row, red.col]))) return false
   if (mode >= 2 && yellows.some((yellow) => isAligned(cross, [yellow.row, yellow.col]))) return false
-  if (mode === 3 && blues.some((blue) => (isDiagonal(cross, [blue.row, blue.col]) || isAligned(cross, [blue.row, blue.col])))) return false
   return true
 }
 
@@ -134,7 +132,7 @@ const computeCrossCandidates = (
   for (let row = 0; row < GRID_SIZE; row += 1) {
     for (let col = 0; col < GRID_SIZE; col += 1) {
       const position: Position = [row, col]
-      if (isCrossValid(position, reds, yellows, blues, mode)) {
+      if (isCrossValid(position, reds, yellows, mode)) {
         candidates.push(position)
       }
     }
@@ -209,7 +207,7 @@ const evaluateSolution = (
   blues: GridCell[],
   mode: SolverMode,
 ) => {
-  if (!isCrossValid(cross, reds, yellows, blues, mode)) return Number.NEGATIVE_INFINITY
+  if (!isCrossValid(cross, reds, yellows, mode)) return Number.NEGATIVE_INFINITY
   if (!isVertexValid(vertices[0], reds, yellows, blues, pluses, cross, mode)) return Number.NEGATIVE_INFINITY
   if (!isVertexValid(vertices[1], reds, yellows, blues, pluses, cross, mode)) return Number.NEGATIVE_INFINITY
   if (!isVertexValid(vertices[2], reds, yellows, blues, pluses, cross, mode)) return Number.NEGATIVE_INFINITY
