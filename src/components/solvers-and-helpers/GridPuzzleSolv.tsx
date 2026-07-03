@@ -124,7 +124,6 @@ const isVertexValid = (
 const computeCrossCandidates = (
   reds: GridCell[],
   yellows: GridCell[],
-  blues: GridCell[],
   mode: SolverMode,
 ) => {
   const candidates: Position[] = []
@@ -344,7 +343,7 @@ export default function TimelessGridSolver() {
     const { cells, ones, pluses, reds, yellows, blues, xs } = analyzeGrid()
     const mode = getSolverMode(cells)
 
-    const crossCandidates = computeCrossCandidates(reds, yellows, blues, mode)
+    const crossCandidates = computeCrossCandidates(reds, yellows, mode)
     const vertexCandidates = buildVertexCandidates(reds, yellows, blues, pluses, mode)
     const vertexTriples = getVertexCombinations(vertexCandidates)
 
