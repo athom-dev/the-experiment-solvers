@@ -104,7 +104,7 @@ const isCrossValid = (
   if (reds.some((red) => isAligned(cross, [red.row, red.col]))) return false
   if (mode >= 2 && yellows.some((yellow) => isAligned(cross, [yellow.row, yellow.col]))) return false
   if (mode >= 3 && blues.some((blue) => isAligned(cross, [blue.row, blue.col]))) return false
-  if (pluses.some((plus) => {plus.row == cross[0] &&  plus.col == cross[1]}) || xs.some((x) => {x.row == cross[0] && x.col == cross[1]})) return false
+  if (pluses.some((plus) => {return (plus.row == cross[0] &&  plus.col == cross[1])}) || xs.some((x) => x.row == cross[0] && x.col == cross[1])) return false
     return true
 }
 
