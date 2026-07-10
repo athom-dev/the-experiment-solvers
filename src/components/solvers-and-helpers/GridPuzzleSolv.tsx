@@ -96,11 +96,16 @@ const isCrossValid = (
   cross: Position,
   reds: GridCell[],
   yellows: GridCell[],
+  blues: GridCell[],
+  pluses: GridCell[],
+  xs: GridCell[],
   mode: SolverMode,
 ) => {
   if (reds.some((red) => isAligned(cross, [red.row, red.col]))) return false
   if (mode >= 2 && yellows.some((yellow) => isAligned(cross, [yellow.row, yellow.col]))) return false
-  return true
+  if (mode >= 3 && blues.some((blue) => isAligned(cross, [blue.row, blue.col]))) return false
+  if (pluses.some((plus) => {plus.row == cross[0] &&  plus.col == cross[1]}) || xs.some((x) => {x.row == cross[0] && x.col == cross[1]})) return false
+    return true
 }
 
 const isVertexValid = (
@@ -109,6 +114,7 @@ const isVertexValid = (
   yellows: GridCell[],
   blues: GridCell[],
   pluses: GridCell[],
+  xs: GridCell[],
   cross: Position,
 
   mode: SolverMode,
@@ -118,12 +124,16 @@ const isVertexValid = (
   if (mode >= 2 && yellows.some((yellow) => isAligned(vertex, [yellow.row, yellow.col]))) return false
   if (mode === 3 && blues.some((blue) => isDiagonal(vertex, [blue.row, blue.col]))) return false
   if (pluses.some((plus) => plus.row === vertex[0] && plus.col === vertex[1])) return false
+  if (xs.some((x) => {return (x.row === vertex[0] && x.col === vertex[1])})) return false
   return true
 }
 
 const computeCrossCandidates = (
   reds: GridCell[],
   yellows: GridCell[],
+  blues: GridCell[],
+  pluses: GridCell[],
+  xs: GridCell[],
   mode: SolverMode,
 ) => {
   const candidates: Position[] = []
@@ -131,7 +141,7 @@ const computeCrossCandidates = (
   for (let row = 0; row < GRID_SIZE; row += 1) {
     for (let col = 0; col < GRID_SIZE; col += 1) {
       const position: Position = [row, col]
-      if (isCrossValid(position, reds, yellows, mode)) {
+      if (isCrossValid(position, reds, yellows, blues, pluses, xs, mode)) {
         candidates.push(position)
       }
     }
@@ -145,13 +155,14 @@ const buildVertexCandidates = (
   yellows: GridCell[],
   blues: GridCell[],
   pluses: GridCell[],
+  xs: GridCell[],
   mode: SolverMode,
 ) => {
   const candidates: { position: Position; score: number }[] = []
 
   flattenGrid().forEach((cell) => {
     const position: Position = [cell.row, cell.col]
-    if (!isVertexValid(position, reds, yellows, blues, pluses, [-1,-1],  mode)) return
+    if (!isVertexValid(position, reds, yellows, blues, pluses, xs, [-1,-1],  mode)) return
     candidates.push({ position, score: cell.value === 1 ? 10 : cell.value === 2 ? 5 : 1 })
   })
 
@@ -206,10 +217,10 @@ const evaluateSolution = (
   blues: GridCell[],
   mode: SolverMode,
 ) => {
-  if (!isCrossValid(cross, reds, yellows, mode)) return Number.NEGATIVE_INFINITY
-  if (!isVertexValid(vertices[0], reds, yellows, blues, pluses, cross, mode)) return Number.NEGATIVE_INFINITY
-  if (!isVertexValid(vertices[1], reds, yellows, blues, pluses, cross, mode)) return Number.NEGATIVE_INFINITY
-  if (!isVertexValid(vertices[2], reds, yellows, blues, pluses, cross, mode)) return Number.NEGATIVE_INFINITY
+  if (!isCrossValid(cross, reds, yellows, blues, pluses, xs, mode)) return Number.NEGATIVE_INFINITY
+  if (!isVertexValid(vertices[0], reds, yellows, blues, pluses, xs, cross, mode)) return Number.NEGATIVE_INFINITY
+  if (!isVertexValid(vertices[1], reds, yellows, blues, pluses, xs, cross, mode)) return Number.NEGATIVE_INFINITY
+  if (!isVertexValid(vertices[2], reds, yellows, blues, pluses, xs, cross, mode)) return Number.NEGATIVE_INFINITY
 
   const onesCovered = countCoveredOnes(ones, cross, vertices)
   const plusRule = plusAlignmentSatisfied(pluses, vertices)
@@ -343,8 +354,8 @@ export default function TimelessGridSolver() {
     const { cells, ones, pluses, reds, yellows, blues, xs } = analyzeGrid()
     const mode = getSolverMode(cells)
 
-    const crossCandidates = computeCrossCandidates(reds, yellows, mode)
-    const vertexCandidates = buildVertexCandidates(reds, yellows, blues, pluses, mode)
+    const crossCandidates = computeCrossCandidates(reds, yellows, blues, pluses, xs, mode)
+    const vertexCandidates = buildVertexCandidates(reds, yellows, blues, pluses, xs, mode)
     const vertexTriples = getVertexCombinations(vertexCandidates)
 
     let bestScore = Number.NEGATIVE_INFINITY
