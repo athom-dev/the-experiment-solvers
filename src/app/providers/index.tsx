@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router";
 
 export default function AppProviders({children}:{children: React.ReactNode}) {
   return (
-    <ChakraProvider>
+    <ChakraProvider forcedTheme="dark">
       <BrowserRouter>
         {children}
       </BrowserRouter>

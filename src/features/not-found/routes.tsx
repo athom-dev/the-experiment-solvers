@@ -1,8 +1,9 @@
+import settings from "@/app/settings"
 import NotFound from "./pages"
 
 const homeRoutes = [
   {
-    path: "/the-experiment-solvers/*",
+    path: `${settings.base}/*`,
     element: <NotFound/>
   }
 ]

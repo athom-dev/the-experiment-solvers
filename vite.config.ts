@@ -4,7 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/the-experiment-solvers',
+  base: '/the-experiment-directory',
   plugins: [react(), tsconfigPaths()],
   build: {
     rollupOptions: {

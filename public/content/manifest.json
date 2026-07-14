@@ -1,0 +1,35 @@
+{
+  "DEFAULT_TYPE": "doc",
+  "DEFAULT_FILENAME": "index",
+  "UNTITLED_ARTICLE": "Untitled Article",
+  "UNTITLED_CATEGORY": "Untitled Category",
+  "NO_IMAGE": "noimage.jpg",
+
+  "categories": {
+    "basics": {
+      "title": "Basics"
+    }
+  },
+
+  "types": [
+    "doc"
+  ],
+
+  "articles": {
+    "0001": {
+      "title": "Getting Started — Roblox Core",
+      "type": "doc",
+      "categories": ["basics"]
+    },
+    "0002": {
+      "title": "Interface & Controls",
+      "type": "doc",
+      "categories": ["basics"]
+    },
+    "0003": {
+      "title": "Mechanics",
+      "type": "doc",
+      "categories": ["basics"]
+    }
+  }
+}
